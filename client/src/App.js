@@ -1,28 +1,28 @@
 import React from 'react';
-//import MainLayout from "./components/layout/MainLayout/MainLayout";
+import { Switch, Route } from 'react-router-dom';
+
+import MainLayout from "./components/layouts/MainLayout/MainLayout";
+
+//import routes
+import Home from './components/pages/Home/HomePage';
+import FAQ from './components/pages/FAQ/FaqPage';
+import Contact from './components/pages/Contact/ContactPage';
+import Statute from './components/pages/Statute/StatutePage';
+import NotFound from './components/pages/NotFound/NotFoundPage';
 
 class App extends React.Component {
 
-  state = {
-    product: [],
-  };
-
-  componentDidMount() {
-    fetch('http://localhost:8000/api/home')
-        .then(res => res.json())
-        .then(res => {
-          this.setState({ product: res });
-        });
-  }
-
   render() {
     return (
-      //<MainLayout></MainLayout>
-        <div>
-          <ul>
-            {this.state.product.map(product => <li key={product.id}>{product.model}</li>)}
-          </ul>
-        </div>
+      <MainLayout>
+          <Switch>
+              <Route path={'/'} exact component={Home}/>
+              <Route path={'/FAQ'} exact component={FAQ}/>
+              <Route path={'/statute'} exact component={Statute}/>
+              <Route path={'/contact'} exact component={Contact}/>
+              <Route exact component={NotFound}/>
+          </Switch>
+      </MainLayout>
     );
   }
 }
