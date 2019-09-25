@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductCounter from "../../features/ProductCounter/ProductCounter";
-import Product from "../../features/Product/Product";
+import Product from "../../features/Product/ProductContainer";
 
 const ProductPage = () => (
     <div>
