@@ -46,7 +46,7 @@ export const loadProductsRequest = () => {
             let res = await axios.get(`${API_URL}/products`);
             dispatch(loadProducts(res.data));
         } catch(e) {
-            console.log(err.message);
+            console.log(e.message);
         }
     };
 };
