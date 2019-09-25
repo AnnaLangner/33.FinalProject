@@ -1,12 +1,15 @@
 import React from 'react';
 import NavBar from '../../features/NavBar/NavBar';
 import Footer from '../../features/Footer/Footer';
+import PageContainer from "../PageContainer/PageContainer";
 
 const MainLayout = ({ children }) => (
     <div>
-        <NavBar />
-        {children}
-        <Footer />
+        <PageContainer>
+            <NavBar />
+            {children}
+            <Footer />
+        </PageContainer>
     </div>
 );
 
