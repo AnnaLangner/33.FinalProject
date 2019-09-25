@@ -1,0 +1,35 @@
+$color-text: #2d3436;
+$color-text-light: #636e72;
+$color-text-bright: #dfe6e9;
+$color-primary: #a29bfe;
+$color-secondary: #fd79a8;
+$color-background: #dfe6e9;
+
+$color-success: #55efc4;
+$color-success-back: #00b894;
+$color-info: #74b9ff;
+$color-info-back: #0984e3;
+$color-warning: #ffeaa7;
+$color-warning-back: #fdcb6e;
+$color-danger: #fab1a0;
+$color-danger-back: #e17055;
+$color-error: #ff7675;
+$color-error-back: #d63031;
+
+$color-textfield-border: #ddd;
+$color-editor-border: #ccc;
+$color-editor-border-light: #ddd;
+
+$font-header: 'Oswald', sans-serif;
+$font-text: 'Oswald', sans-serif;
+
+$radius: 5px;
+$base-size: 14px;
+$transition: all 0.5s;
+
+@mixin p-el($element) {
+  &:#{$element}, &::#{$element} {
+    position: absolute;
+    @content;
+  }
+}
