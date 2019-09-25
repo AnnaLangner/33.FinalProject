@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 /* SELECTORS */
 
 export const getCartProducts = ({ products }) => {
@@ -39,11 +41,12 @@ export default function productsRedux(statePart = initialState, action = {}) {
 
 export const loadProductsRequest = () => {
     return dispatch => {
-        console.log('request starter...');
-        setTimeout(() => {
-            const test = [{id: '1', brand: 'A&L', model: 'male'}];
-            dispatch(loadProducts(test));
-            console.log('request finished alfter 2 sec');
-        }, 2000)
+
+        axios.get('http://localhost:8000/api/products').then(res => {
+            dispatch(loadProducts(res.data));
+        })
+            .catch(err => {
+            console.log(err.message);
+        });
     };
 };
