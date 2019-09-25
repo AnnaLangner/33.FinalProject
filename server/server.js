@@ -9,8 +9,8 @@ app.use(express.json());
 
 app.get('/api/home', (req, res) => {
     const data = [
-        {id: 'man(1)', brand: 'A&L', model: 'male', picture: '1'},
-        {id: 'man(2)', brand: 'A&L', model: 'male', picture: '1'},
+        {id: 'man(1)', brand: 'A&L', model: 'male', picture: 'man(1)'},
+        {id: 'man(2)', brand: 'A&L', model: 'male', picture: 'man(2)'},
     ];
     res.json(data);
 });
