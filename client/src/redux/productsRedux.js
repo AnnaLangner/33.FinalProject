@@ -22,8 +22,8 @@ export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS});
 /* INITIAL STATE */
 const initialState = {
     data: [
-        {id: 'man(1)', brand: 'A&L', model: 'male', picture: 'man(1)'},
-        {id: 'man(2)', brand: 'A&L', model: 'male', picture: 'man(2)'},
+        {id: 'man(1)', name: 'Product 1', brand: 'A&L', model: 'male', picture: 'man(1)'},
+        {id: 'man(2)', name: 'Product 2', brand: 'A&L', model: 'male', picture: 'man(2)'},
     ],
     cart: [{ product: 1, amount: 2 }]
 };
