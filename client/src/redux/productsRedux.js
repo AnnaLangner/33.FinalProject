@@ -41,13 +41,12 @@ export default function productsRedux(statePart = initialState, action = {}) {
 /* THUNKS */
 
 export const loadProductsRequest = () => {
-    return dispatch => {
-
-        axios.get(`${API_URL}/products`).then(res => {
+    return async dispatch => {
+        try {
+            let res = await axios.get(`${API_URL}/products`);
             dispatch(loadProducts(res.data));
-        })
-            .catch(err => {
+        } catch(e) {
             console.log(err.message);
-        });
+        }
     };
 };
