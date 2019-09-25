@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { API_URL } from '../config';
 
 /* SELECTORS */
 
@@ -42,7 +43,7 @@ export default function productsRedux(statePart = initialState, action = {}) {
 export const loadProductsRequest = () => {
     return dispatch => {
 
-        axios.get('http://localhost:8000/api/products').then(res => {
+        axios.get(`${API_URL}/products`).then(res => {
             dispatch(loadProducts(res.data));
         })
             .catch(err => {
