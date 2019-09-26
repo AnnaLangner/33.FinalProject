@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import ProductsList from "../ProductsList/ProductsList";
 
 class Product extends React.Component {
 
@@ -13,10 +14,7 @@ class Product extends React.Component {
 
         return (
             <div>
-                Product
-                <ul>
-                    {products.map(product => <li key={product.id}>{product.brand}</li>)}
-                </ul>
+                <ProductsList products={products} />
             </div>
         );
     }
