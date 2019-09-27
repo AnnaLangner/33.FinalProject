@@ -4,11 +4,12 @@ import { PropTypes } from 'prop-types';
 import SmallTitle from '../../common/SmallTitle/SmallTitle';
 import jpg from '../../../../src/picture/men (1).jpg'
 import HtmlBox from "../../common/HtmlBox/HtmlBox";
+import cutText from "../../../utils/cutText";
 
-const ProductSummary = ({ id, content, name, price }) => (
-    <article>
+const ProductSummary = ({ content, name, price }) => (
+    <article className={'product-summary'}>
         <img src={jpg}/>
-        <HtmlBox>{content}</HtmlBox>
+        <HtmlBox>{cutText(content, 250)}</HtmlBox>
         <SmallTitle>{name}</SmallTitle>
         <p>{price}</p>
     </article>
