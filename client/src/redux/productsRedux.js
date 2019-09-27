@@ -51,6 +51,8 @@ export default function productsRedux(statePart = initialState, action = {}) {
             return { ...statePart, request: { pending: false, error: null, success: true } };
         case ERROR_REQUEST:
             return { ...statePart, request: { pending: false, error: action.error, success: false } };
+        default:
+            return statePart;
     }
 };
 
