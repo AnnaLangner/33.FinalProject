@@ -44,6 +44,7 @@ export const loadProductsRequest = () => {
     return async dispatch => {
         try {
             let res = await axios.get(`${API_URL}/products`);
+            await new Promise((resolve, reject) => setTimeout(resolve, 2000));
             dispatch(loadProducts(res.data));
         } catch(e) {
             console.log(e.message);

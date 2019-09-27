@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import ProductsList from "../ProductsList/ProductsList";
+import Spinner from "../../common/Spinner/Spinner";
 
 class Product extends React.Component {
 
@@ -15,6 +16,7 @@ class Product extends React.Component {
         return (
             <div>
                 <ProductsList products={products} />
+                <Spinner/>
             </div>
         );
     }
