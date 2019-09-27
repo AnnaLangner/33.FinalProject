@@ -1,9 +1,10 @@
-//get all products
+const Product = require('../models/product.model');
 
-exports.getProducts = function (req, res) {
-    const data = [
-        {id: 'man(1)', name: 'Product 1', brand: 'A&L', model: 'male', picture: 'man(1)', content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'},
-        {id: 'man(2)', name: 'Product 2', brand: 'A&L', model: 'male', picture: 'man(2)', content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'},
-    ];
-    res.json(data);
+//get all products
+exports.getProducts = async (req, res) => {
+    try {
+        res.status(200).json(await Product.find());
+    } catch(err) {
+        res.status(500).json(err);
+    }
 };
