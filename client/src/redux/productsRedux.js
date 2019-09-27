@@ -8,6 +8,7 @@ export const getCartProducts = ({ products }) => {
         return { product: products.data.find(item => item.id === cartProduct.id), amount: cartProduct.amount }
     })
 };
+export const getRequest = ({ products }) => products.request;
 
 /* ACTIONS */
 
@@ -51,12 +52,14 @@ export default function productsRedux(statePart = initialState, action = {}) {
 
 export const loadProductsRequest = () => {
     return async dispatch => {
+        dispatch(startRequest());
         try {
             let res = await axios.get(`${API_URL}/products`);
             await new Promise((resolve, reject) => setTimeout(resolve, 2000));
             dispatch(loadProducts(res.data));
+            dispatch(endRequest());
         } catch(e) {
-            console.log(e.message);
+            console.log(endRequest());
         }
     };
 };

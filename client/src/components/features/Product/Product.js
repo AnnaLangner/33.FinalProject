@@ -15,8 +15,8 @@ class Product extends React.Component {
 
         return (
             <div>
+                {request.pending && <Spinner/>}
                 <ProductsList products={products} />
-                <Spinner/>
             </div>
         );
     }
