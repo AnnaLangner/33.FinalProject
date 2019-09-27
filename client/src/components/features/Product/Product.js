@@ -11,14 +11,39 @@ class Product extends React.Component {
     }
 
     render() {
-        const { products } = this.props;
+        const { products, request } = this.props;
 
-        return (
-            <div>
-                {request.pending && <Spinner/>}
-                <ProductsList products={products} />
-            </div>
-        );
+        if (request.pending === false && request.success === true && products.length > 0) {
+            return (
+                <div>
+                    <ProductsList products={products} />
+                </div>
+            );
+        } else if (request.pending === true && request.success === null && request.error === null) {
+            return (
+                <div>
+                    <Spinner/>
+                </div>
+            );
+        } else if (request.pending === false && request.error != null) {
+            return (
+                <div>
+                    <Alert variant={'error'}>{request.error}</Alert>
+                </div>
+            );
+        } else if (request.pending === false && request.success === true && posts.length === 0) {
+            return (
+                <div>
+                    <Alert variant={'info'}>No posts</Alert>
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <Alert variant={'info'}>Something went wrong...</Alert>
+                </div>
+            );
+        }
     }
 }
 
