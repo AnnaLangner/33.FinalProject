@@ -7,6 +7,6 @@ const ProductController = require('../controllers/product.controller');
 router.route('/products').get(ProductController.getProducts);
 
 // get product by range
-router.route('/product/range/:startAt/:limit').get(ProductController.getProductByRange);
+router.route('/products/range/:startAt/:limit').get(ProductController.getProductByRange);
 
 module.exports = router;
