@@ -2,6 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import ProductsList from "../ProductsList/ProductsList";
 import Spinner from "../../common/Spinner/Spinner";
+import Alert from "../../common/Alert/Alert";
 import Pagination from '../../common/Pagination/Pagination';
 
 class Product extends React.Component {
@@ -43,7 +44,7 @@ class Product extends React.Component {
                     <Alert variant={'error'}>{request.error}</Alert>
                 </div>
             );
-        } else if (request.pending === false && request.success === true && posts.length === 0) {
+        } else if (request.pending === false && request.success === true && products.length === 0) {
             return (
                 <div>
                     <Alert variant={'info'}>No posts</Alert>
