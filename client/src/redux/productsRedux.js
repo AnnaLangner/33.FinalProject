@@ -3,14 +3,15 @@ import { API_URL } from '../config';
 
 /* SELECTORS */
 
+export const getProducts = ({ products }) => products.data;
+export const getRequest = ({ products }) => products.request;
+export const getPages = ({ products }) => Math.ceil(products.amount / products.postsPerPage);
+export const getSingleProduct = ({ products }) => products.singleProduct;
 export const getCartProducts = ({ products }) => {
     return products.cart.map(cartProduct => {
         return { product: products.data.find(item => item.id === cartProduct.id), amount: cartProduct.amount }
     })
 };
-export const getRequest = ({ products }) => products.request;
-export const getPages = ({ products }) => Math.ceil(products.amount / products.postsPerPage);
-export const getSingleProduct = ({ products }) => products.singleProduct;
 /* ACTIONS */
 
 // action name creator
