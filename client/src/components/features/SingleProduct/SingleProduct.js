@@ -1,12 +1,9 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { Alert } from 'reactstrap';
-import { Button } from 'reactstrap';
+import { Alert, Card, CardImg, CardText, CardBody, CardTitle, Button  } from 'reactstrap';
 
 import Spinner from '../../common/Spinner/Spinner';
-import HtmlBox from '../../common/HtmlBox/HtmlBox';
-import SmallTitle from '../../common/SmallTitle/SmallTitle';
 
 
 class SingleProduct extends React.Component {
@@ -23,13 +20,15 @@ class SingleProduct extends React.Component {
         if (request.pending === false && request.success === true && product) {
             return (
                 <div>
-                    <article>
-                        <SmallTitle>{product.name}</SmallTitle>
-                        <p>{product.price}</p>
-                        <HtmlBox>{product.content}</HtmlBox>
-                        <Button color="secondary">Add to card</Button>
-
-                    </article>
+                    <Card>
+                        <CardImg src={'../../../../src/picture/men (1).jpg'}/>
+                        <CardBody>
+                            <CardTitle>{product.name}</CardTitle>
+                            <CardText>{product.price}</CardText>
+                            <CardText>{product.content}</CardText>
+                            <Button color={'secondary'}>Add to cart</Button>
+                        </CardBody>
+                    </Card>
                 </div>
             );
         } else if (request.pending === true || request.success === null) {

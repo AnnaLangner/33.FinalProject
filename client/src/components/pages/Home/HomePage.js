@@ -1,9 +1,9 @@
 import React from 'react';
-import Product from "../../features/Product/Product";
+import Products from "../../features/Products/ProductsContainer";
 
 const HomePage = () => (
     <div>
-       <Product />
+       <Products />
     </div>
 );
 

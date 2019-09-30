@@ -1,11 +1,11 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import { Alert } from 'reactstrap';
 import ProductsList from "../ProductsList/ProductsList";
 import Spinner from "../../common/Spinner/Spinner";
-import Alert from "../../common/Alert/Alert";
 import Pagination from '../../common/Pagination/Pagination';
 
-class Product extends React.Component {
+class Products extends React.Component {
 
     componentDidMount() {
         const { loadProductByPage, initialPage, productPerPage } = this.props;
@@ -41,26 +41,26 @@ class Product extends React.Component {
         } else if (request.pending === false && request.error != null) {
             return (
                 <div>
-                    <Alert variant={'error'}>{request.error}</Alert>
+                    <Alert color={'error'}>{request.error}</Alert>
                 </div>
             );
         } else if (request.pending === false && request.success === true && products.length === 0) {
             return (
                 <div>
-                    <Alert variant={'info'}>No posts</Alert>
+                    <Alert color={'info'}>No posts</Alert>
                 </div>
             );
         } else {
             return (
                 <div>
-                    <Alert variant={'info'}>Something went wrong...</Alert>
+                    <Alert color={'info'}>Something went wrong...</Alert>
                 </div>
             );
         }
     }
 }
 
-Product.propTypes = {
+Products.propTypes = {
     products: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,
@@ -73,4 +73,4 @@ Product.propTypes = {
     loadProductsByPage: PropTypes.func.isRequired,
 };
 
-export default Product;
+export default Products;
