@@ -7,6 +7,7 @@ const loadTestData = async () => {
             name: 'Product 1',
             brand: 'A&L',
             model: 'male',
+            price: '9,99 $',
             picture: 'man(1)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -15,6 +16,7 @@ const loadTestData = async () => {
             name: 'Product 2',
             brand: 'A&L',
             model: 'male',
+            price: '9,99 $',
             picture: 'man(2)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
