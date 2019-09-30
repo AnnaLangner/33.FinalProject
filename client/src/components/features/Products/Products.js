@@ -63,14 +63,11 @@ class Products extends React.Component {
 Products.propTypes = {
     products: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            price: PropTypes.string.isRequired,
-            model: PropTypes.string.isRequired,
-            content: PropTypes.string.isRequired,
+            product: PropTypes.object.isRequired,
+            amount: PropTypes.number.isRequired,
         })
     ),
-    loadProductsByPage: PropTypes.func.isRequired,
+    loadProductByPage: PropTypes.func.isRequired,
 };
 
 export default Products;
