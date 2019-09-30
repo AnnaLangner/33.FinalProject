@@ -10,7 +10,7 @@ export const getCartProducts = ({ products }) => {
 };
 export const getRequest = ({ products }) => products.request;
 export const getPages = ({ products }) => Math.ceil(products.amount / products.postsPerPage);
-
+export const getSingleProduct = ({ products }) => products.singleProduct;
 /* ACTIONS */
 
 // action name creator
@@ -19,28 +19,33 @@ const createActionName = name => `app/${reducerName}/${name}`;
 
 export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
 export const LOAD_PRODUCT_PAGE = createActionName('LOAD_PRODUCT_PAGE');
+export const LOAD_SINGLE_PRODUCT = createActionName('LOAD_SINGLE_PRODUCT');
 export const START_REQUEST = createActionName('START_REQUEST');
 export const END_REQUEST = createActionName('END_REQUEST');
 export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
+export const RESET_REQUEST = createActionName('RESET_REQUEST');
 
 export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS});
 export const loadProductByPage = payload => ({ payload, type: LOAD_PRODUCT_PAGE });
+export const loadSingleProduct = payload => ({ payload, type: LOAD_SINGLE_PRODUCT });
 export const startRequest = () => ({ type: START_REQUEST });
 export const endRequest = () => ({ type: END_REQUEST });
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
+export const resetRequest = () => ({ type: RESET_REQUEST });
 
 /* INITIAL STATE */
 const initialState = {
-    data: [
-        {id: 'man(1)', name: 'Product 1', brand: 'A&L', model: 'male', picture: 'man(1)', content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'},
-        {id: 'man(2)', name: 'Product 2', brand: 'A&L', model: 'male', picture: 'man(2)', content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'},
-    ],
+    data: [],
     cart: [{ product: 1, amount: 2 }],
     request: {
         pending: false,
         error: null,
         success: null,
-    }
+    },
+    singleProduct: null,
+    amount: 0,
+    productPerPage: 6,
+    presentPage: 1,
 };
 
 /* REDUCER */
@@ -48,6 +53,8 @@ export default function productsRedux(statePart = initialState, action = {}) {
     switch (action.type) {
         case LOAD_PRODUCTS:
             return { ...statePart, data: action.payload };
+        case LOAD_SINGLE_PRODUCT:
+            return { ...statePart, singleProduct: action.payload};
         case LOAD_PRODUCT_PAGE:
             return {
                 ...statePart,
@@ -62,6 +69,8 @@ export default function productsRedux(statePart = initialState, action = {}) {
             return { ...statePart, request: { pending: false, error: null, success: true } };
         case ERROR_REQUEST:
             return { ...statePart, request: { pending: false, error: action.error, success: false } };
+        case RESET_REQUEST:
+            return { ...statePart, request: { pending: false, error: null, success: null } };
         default:
             return statePart;
     }
@@ -81,6 +90,19 @@ export const loadProductsRequest = () => {
             dispatch(errorRequest(e.message));
         }
     };
+};
+
+export const loadSingleProductRequest = (id) => {
+    return async dispatch => {
+        dispatch(startRequest());
+        try {
+            let res = await axios.get(`${API_URL}/product/${id}`);
+            dispatch(loadSingleProduct(res.data));
+            dispatch(endRequest());
+        } catch (e) {
+            dispatch(errorRequest(e.message));
+        }
+    }
 };
 
 export const loadProductByPageRequest = (page) => {

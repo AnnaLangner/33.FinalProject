@@ -9,6 +9,16 @@ exports.getProducts = async (req, res) => {
     }
 };
 
+//get single product
+exports.getSingleProduct = async (req, res) => {
+    Product.findOne({id: req.params.id}).exec((err, product) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+        res.jason(product);
+    });
+};
+
 // get product by range
 exports.getProductByRange = async function (req, res) {
 
