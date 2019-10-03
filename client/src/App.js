@@ -20,7 +20,7 @@ class App extends React.Component {
               <Route path={'/FAQ'} exact component={FAQ}/>
               <Route path={'/statute'} exact component={Statute}/>
               <Route path={'/contact'} exact component={Contact}/>
-              <Route exact component={NotFound}/>
+              <Route component={NotFound}/>
           </Switch>
       </MainLayout>
     );
