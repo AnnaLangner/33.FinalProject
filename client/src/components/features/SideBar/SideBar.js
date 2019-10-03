@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Container, Badge, Button } from 'reactstrap';
+import { Row, Col, Container, Button } from 'reactstrap';
 import loadTestData from '../../../testData';
 
 class SideBar extends React.Component {
@@ -31,7 +31,7 @@ class SideBar extends React.Component {
         return (
             <Container>
                 <div>
-                    <h1>Heading <Badge color="secondary">Sort by:</Badge></h1>
+                    <h1>Sort by:</h1>
                 </div>
                 <Row>
                     <Col><Button color="link">Name A-Z</Button></Col>
