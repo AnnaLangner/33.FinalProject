@@ -7,7 +7,7 @@ const loadTestData = async () => {
             name: 'Jacket 1',
             brand: 'A&L',
             model: 'male',
-            price: '9,99 $',
+            price: 5,
             picture: 'man(1)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -16,7 +16,7 @@ const loadTestData = async () => {
             name: 'Shirt 1',
             brand: 'A&L',
             model: 'male',
-            price: '9,99 $',
+            price: 7,
             picture: 'man(2)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -25,7 +25,7 @@ const loadTestData = async () => {
             name: 'Shirt 2',
             brand: 'A&L',
             model: 'male',
-            price: '9,99 $',
+            price: 8,
             picture: 'man(3)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -34,7 +34,7 @@ const loadTestData = async () => {
             name: 'Jacket 2',
             brand: 'A&L',
             model: 'male',
-            price: '9,99 $',
+            price: 5,
             picture: 'man(4)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -43,7 +43,7 @@ const loadTestData = async () => {
             name: 'Jacket 3',
             brand: 'A&L',
             model: 'male',
-            price: '9,99 $',
+            price: 6,
             picture: 'man(5)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -52,7 +52,7 @@ const loadTestData = async () => {
             name: 'Coat 1',
             brand: 'A&L',
             model: 'male',
-            price: '9,99 $',
+            price: 9,
             picture: 'man(6)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -61,7 +61,7 @@ const loadTestData = async () => {
             name: 'Shirt 3',
             brand: 'A&L',
             model: 'male',
-            price: '9,99 $',
+            price: 7,
             picture: 'man(7)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -70,7 +70,7 @@ const loadTestData = async () => {
             name: 'Jacket 4',
             brand: 'A&L',
             model: 'male',
-            price: '9,99 $',
+            price: 4,
             picture: 'man(8)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -79,7 +79,7 @@ const loadTestData = async () => {
             name: 'Sweater',
             brand: 'A&L',
             model: 'female',
-            price: '9,99 $',
+            price: 4,
             picture: 'woman(1)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -88,7 +88,7 @@ const loadTestData = async () => {
             name: 'Skirt',
             brand: 'A&L',
             model: 'female',
-            price: '9,99 $',
+            price: 3,
             picture: 'woman(2)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -97,7 +97,7 @@ const loadTestData = async () => {
             name: 'Coat 2',
             brand: 'A&L',
             model: 'female',
-            price: '9,99 $',
+            price: 11,
             picture: 'woman(3)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -106,7 +106,7 @@ const loadTestData = async () => {
             name: 'Costume',
             brand: 'A&L',
             model: 'female',
-            price: '9,99 $',
+            price: 16,
             picture: 'woman(4)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -115,7 +115,7 @@ const loadTestData = async () => {
             name: 'Dress 1',
             brand: 'A&L',
             model: 'female',
-            price: '9,99 $',
+            price: 10,
             picture: 'woman(5)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -124,7 +124,7 @@ const loadTestData = async () => {
             name: 'Shirt 4',
             brand: 'A&L',
             model: 'female',
-            price: '9,99 $',
+            price: 12,
             picture: 'woman(6)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -133,7 +133,7 @@ const loadTestData = async () => {
             name: 'Dress 2',
             brand: 'A&L',
             model: 'female',
-            price: '9,99 $',
+            price: 13,
             picture: 'woman(7)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
@@ -142,7 +142,7 @@ const loadTestData = async () => {
             name: 'Dress 3',
             brand: 'A&L',
             model: 'female',
-            price: '9,99 $',
+            price: 14,
             picture: 'woman(8)',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
