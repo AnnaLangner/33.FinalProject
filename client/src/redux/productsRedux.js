@@ -112,7 +112,7 @@ export const loadProductByPageRequest = (page) => {
         dispatch(startRequest());
         try {
 
-            const productPerPage = 10;
+            const productPerPage = 6;
 
             const startAt = (page - 1) * productPerPage;
             const limit = productPerPage;
