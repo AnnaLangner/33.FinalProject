@@ -21,7 +21,7 @@ ProductSummary.propTypes = {
     id: PropTypes.string,
     content: PropTypes.string,
     name: PropTypes.string,
-    price: PropTypes.string,
+    price: PropTypes.number,
 };
 
 export default ProductSummary;
