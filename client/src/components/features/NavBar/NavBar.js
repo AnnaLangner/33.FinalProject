@@ -7,7 +7,7 @@ class NavBar extends React.Component {
 
     state = {
         links: [
-            { path: '/', title: 'Home' },
+            { path: '/products', title: 'Home' },
             { path: '/FAQ', title: 'FAQ' },
             { path: '/statute', title: 'Statute' },
             { path: '/contact', title: 'Contact' },

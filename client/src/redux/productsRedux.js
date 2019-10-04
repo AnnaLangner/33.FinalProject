@@ -97,7 +97,7 @@ export const loadSingleProductRequest = (id) => {
     return async dispatch => {
         dispatch(startRequest());
         try {
-            let res = await axios.get(`${API_URL}/product/${id}`);
+            let res = await axios.get(`${API_URL}/products/${id}`);
             dispatch(loadSingleProduct(res.data));
             dispatch(endRequest());
         } catch (e) {
@@ -117,7 +117,7 @@ export const loadProductByPageRequest = (page) => {
             const startAt = (page - 1) * productPerPage;
             const limit = productPerPage;
 
-            let res = await axios.get(`${API_URL}/product/range/${startAt}/${limit}`);
+            let res = await axios.get(`${API_URL}/products/range/${startAt}/${limit}`);
             await new Promise((resolve, reject) => setTimeout(resolve, 2000));
 
             const payload = {
