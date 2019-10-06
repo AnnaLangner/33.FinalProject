@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 import { Alert } from 'reactstrap';
 import ProductsList from "../ProductsList/ProductsList";
 import Spinner from "../../common/Spinner/Spinner";
-//import Pagination from '../../common/Pagination/Pagination';
+import Pagination from '../../common/Pagination/Pagination';
 
 class Products extends React.Component {
 
@@ -29,7 +29,7 @@ class Products extends React.Component {
             return (
                 <div>
                     <ProductsList products={products} />
-                    {/*{ pagination && <Pagination pages={pages} onPageChange={loadProductPage} initialPage={presentPage} /> }*/}
+                    { pagination && <Pagination pages={pages} onPageChange={loadProductPage} initialPage={presentPage} /> }
                 </div>
             );
         } else if (request.pending === true && request.success === null && request.error === null) {
