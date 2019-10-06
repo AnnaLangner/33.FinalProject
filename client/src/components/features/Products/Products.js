@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { Alert } from 'reactstrap';
 import ProductsList from "../ProductsList/ProductsList";
 import Spinner from "../../common/Spinner/Spinner";

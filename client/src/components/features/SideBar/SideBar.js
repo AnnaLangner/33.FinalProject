@@ -1,6 +1,9 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { Row, Col, Container, Button } from 'reactstrap';
 import loadTestData from '../../../testData';
+
+import './SideBar.css';
 
 class SideBar extends React.Component {
     constructor(props) {
@@ -30,10 +33,10 @@ class SideBar extends React.Component {
     render() {
         return (
             <Container>
-                <div>
+                <div className={'sideBarHead'}>
                     <h1>Sort by:</h1>
                 </div>
-                <Row>
+                <Row className={'side'}>
                     <Col><Button color="link">Name A-Z</Button></Col>
                 </Row>
                 <Row>
