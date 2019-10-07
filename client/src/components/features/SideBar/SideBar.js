@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
 import { Row, Col, Container, Button } from 'reactstrap';
 import loadTestData from '../../../testData';
 
