@@ -1,33 +1,9 @@
 import React from 'react';
 import { Row, Col, Container, Button } from 'reactstrap';
-import loadTestData from '../../../testData';
 
 import './SideBar.css';
 
 class SideBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: loadTestData,
-            direction: {
-                price: 'asc'
-            }
-        };
-        this.sortBy = this.sortBy.bind(this);
-    }
-
-    sortBy(key) {
-        this.setState({
-            data: loadTestData.sort((a, b) =>
-                this.state.direction[key] === 'asc'
-                    ? parseFloat(a[key]) - parseFloat(b[key])
-                    : parseFloat(b[key]) - parseFloat(a[key])
-            ),
-            direction: {
-                [key]: this.state.direction[key] === 'asc' ? 'desc' : 'asc'
-            }
-        });
-    }
 
     render() {
         return (
@@ -42,7 +18,7 @@ class SideBar extends React.Component {
                     <Col><Button color="link">Name Z-A</Button></Col>
                 </Row>
                 <Row>
-                    <Col data={this.state.data} sortBy={this.sortBy}><Button color="link">Price up</Button></Col>
+                    <Col><Button color="link">Price up</Button></Col>
                 </Row>
                 <Row>
                     <Col><Button color="link">Price down</Button></Col>
