@@ -8,7 +8,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 5',
-            picture: { src: '../client/src/picture/men (1).jpg'},
+            picture: './picture/men (1).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -17,7 +17,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 7',
-            picture: { src: '../client/src/picture/men (2).jpg'},
+            picture: './picture/men (2).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -26,7 +26,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 8',
-            picture: { src: '../client/src/picture/men (3).jpg'},
+            picture: './picture/men (3).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -35,7 +35,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 5',
-            picture: { src: '../client/src/picture/men (4).jpg'},
+            picture: './picture/men (4).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -44,7 +44,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 6',
-            picture: { src: '../client/src/picture/men (5).jpg'},
+            picture: './picture/men (5).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -53,7 +53,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 9',
-            picture: { src: '../client/src/picture/men (6).jpg'},
+            picture: './picture/men (6).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -62,7 +62,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 7',
-            picture: { src: '../client/src/picture/men (7).jpg'},
+            picture: './picture/men (7).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -71,7 +71,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 4',
-            picture: { src: '../client/src/picture/men (8).jpg'},
+            picture: './picture/men (8).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -80,7 +80,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 4',
-            picture: { src: '../client/src/picture/women (1).jpg'},
+            picture: './picture/women (1).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -89,7 +89,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 3',
-            picture: { src: '../client/src/picture/women (2).jpg'},
+            picture: './picture/women (2).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -98,7 +98,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 11',
-            picture: { src: '../client/src/picture/women (3).jpg'},
+            picture: './picture/women (3).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -107,7 +107,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 16',
-            picture: { src: '../client/src/picture/women (4).jpg'},
+            picture: './picture/women (4).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -116,7 +116,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 10',
-            picture: { src: '../client/src/picture/women (5).jpg'},
+            picture: './picture/women (5).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -125,7 +125,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 12',
-            picture: { src: '../client/src/picture/women (6).jpg'},
+            picture: './picture/women (6).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -134,7 +134,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 13',
-            picture: { src: '../client/src/picture/women (7).jpg'},
+            picture: './picture/women (7).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -143,7 +143,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 14',
-            picture: { src: '../client/src/picture/women (8).jpg'},
+            picture: './picture/women (8).jpg',
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
     ];

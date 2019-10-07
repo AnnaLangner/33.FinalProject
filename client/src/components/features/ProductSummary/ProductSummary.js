@@ -7,7 +7,7 @@ import cutText from "../../../utils/cutText";
 const ProductSummary = ({ content, name, price }) => (
     <div className={'product-summary'}>
         <Card>
-            <CardImg src={'../../../../src/picture/men(1).jpg'}/>
+            <CardImg src={'./picture/men(1).jpg'}/>
             <CardBody>
                 <CardTitle>{name}</CardTitle>
                 <CardText>{price}</CardText>
@@ -23,7 +23,7 @@ ProductSummary.propTypes = {
     picture: PropTypes.object,
     content: PropTypes.string,
     name: PropTypes.string,
-    price: PropTypes.number,
+    price: PropTypes.string,
 };
 
 export default ProductSummary;
