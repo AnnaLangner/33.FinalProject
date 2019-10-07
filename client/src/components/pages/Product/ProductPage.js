@@ -1,11 +1,11 @@
 import React from 'react';
 import ProductsList from "../../features/ProductsList/ProductsList";
-import Product from "../../features/Product/ProductContainer";
+import Products from "../../features/Products/ProductsContainer";
 
 const ProductPage = () => (
     <div>
         <ProductsList />
-        <Product/>
+        <Products/>
     </div>
 );
 
