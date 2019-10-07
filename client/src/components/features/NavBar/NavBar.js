@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../../../public/picture/Logo.jpg';
+import Logo from '../../../../src/picture/Logo.jpg';
 import MainMenu from '../../layouts/MainMenu/MainMenu';
 import './NavBar.scss';
 
