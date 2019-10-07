@@ -68,7 +68,7 @@ Products.propTypes = {
             name: PropTypes.string.isRequired,
             brand:PropTypes.string.isRequired,
             model:PropTypes.string.isRequired,
-            price: PropTypes.number.isRequired,
+            price: PropTypes.string.isRequired,
             picture: PropTypes.object.isRequired,
             content: PropTypes.string.isRequired,
         })
