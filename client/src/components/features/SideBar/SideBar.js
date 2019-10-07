@@ -11,7 +11,7 @@ class SideBar extends React.Component {
                 <div className={'sideBarHead'}>
                     <h1>Sort by:</h1>
                 </div>
-                <Row className={'side'}>
+                <Row>
                     <Col><Button color="link">Name A-Z</Button></Col>
                 </Row>
                 <Row>
