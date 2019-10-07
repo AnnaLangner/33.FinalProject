@@ -5,7 +5,7 @@ import { API_URL } from '../config';
 
 export const getProducts = ({ products }) => products.data;
 export const getRequest = ({ products }) => products.request;
-export const getPages = ({ products }) => Math.ceil(products.amount / products.postsPerPage);
+export const getPages = ({ products }) => Math.ceil(products.amount / products.productPerPage);
 export const getSingleProduct = ({ products }) => products.singleProduct;
 export const getCartProducts = ({ products }) => {
     return products.cart.map(cartProduct => {
