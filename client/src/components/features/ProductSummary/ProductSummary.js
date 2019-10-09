@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Card, CardImg, CardText, CardBody, CardTitle, CardLink } from 'reactstrap';
 import men1 from '../../../picture/men1.jpg'
+import ProductModal from '../ProductModal/ProductModal'
 
 const ProductSummary = ({ name, price }) => (
     <div className={'product-summary'}>
@@ -11,7 +12,7 @@ const ProductSummary = ({ name, price }) => (
             <CardBody>
                 <CardTitle>{name}</CardTitle>
                 <CardText>{price}</CardText>
-                <CardLink href={'#'}>More about </CardLink>
+                <CardLink href={'/product'}><ProductModal/></CardLink>
             </CardBody>
         </Card>
     </div>

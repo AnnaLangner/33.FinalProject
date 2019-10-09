@@ -1,7 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { Alert, Card, CardImg, CardText, CardBody, CardTitle, Button  } from 'reactstrap';
+import { Alert, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 import Spinner from '../../common/Spinner/Spinner';
 import men1 from "../../../picture/men1.jpg";
@@ -27,7 +27,6 @@ class SingleProduct extends React.Component {
                             <CardTitle>{product.name}</CardTitle>
                             <CardText>{product.price}</CardText>
                             <CardText>{product.content}</CardText>
-                            <Button color={'secondary'}>Add to cart</Button>
                         </CardBody>
                     </Card>
                 </div>

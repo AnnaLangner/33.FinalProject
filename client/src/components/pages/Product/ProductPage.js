@@ -1,11 +1,9 @@
 import React from 'react';
-import ProductsList from "../../features/ProductsList/ProductsList";
-import Products from "../../features/Products/ProductsContainer";
+import SingleProduct from "../../features/SingleProduct/SingleProductContainer";
 
 const ProductPage = () => (
     <div>
-        <ProductsList />
-        <Products/>
+        <SingleProduct/>
     </div>
 );
 

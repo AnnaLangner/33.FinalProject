@@ -9,6 +9,7 @@ import FAQ from './components/pages/FAQ/FaqPage';
 import Contact from './components/pages/Contact/ContactPage';
 import Statute from './components/pages/Statute/StatutePage';
 import NotFound from './components/pages/NotFound/NotFoundPage';
+import Product from './components/pages/Product/ProductPage';
 
 class App extends React.Component {
 
@@ -21,6 +22,7 @@ class App extends React.Component {
               <Route path={'/FAQ'} exact component={FAQ}/>
               <Route path={'/statute'} exact component={Statute}/>
               <Route path={'/contact'} exact component={Contact}/>
+              <Route path={'/product'} exact component={Product}/>
               <Route component={NotFound}/>
           </Switch>
       </MainLayout>
