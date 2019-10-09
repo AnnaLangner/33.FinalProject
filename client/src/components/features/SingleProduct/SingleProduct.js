@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { Alert, Card, CardImg, CardText, CardBody, CardTitle, Button  } from 'reactstrap';
 
 import Spinner from '../../common/Spinner/Spinner';
+import men1 from "../../../picture/men1.jpg";
 
 
 class SingleProduct extends React.Component {
@@ -21,7 +22,7 @@ class SingleProduct extends React.Component {
             return (
                 <div>
                     <Card>
-                        <CardImg src={'../../../../src/picture/men (1).jpg'}/>
+                        <CardImg src={men1}/>
                         <CardBody>
                             <CardTitle>{product.name}</CardTitle>
                             <CardText>{product.price}</CardText>
