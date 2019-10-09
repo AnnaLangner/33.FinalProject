@@ -18,6 +18,7 @@ Dostępne są 2 główne skrypty przyspieszające pracę:
 
 ## Konwencje i dobre praktyki
 1. Podstawowa struktura katalogów.
+<blockquote>
 client/
   src/
   App.js
@@ -35,6 +36,7 @@ server/
   routes/
   config.js
   server.js
+  </blockquote>
   
   ### Link do repozytorium
    https://github.com/AnnaLangner/33.FinalProject  
