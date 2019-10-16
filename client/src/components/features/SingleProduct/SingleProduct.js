@@ -46,7 +46,7 @@ class SingleProduct extends React.Component {
         } else if (request.pending === false && request.success === true) {
             return (
                 <div>
-                    <Alert color={'info'}>No posts</Alert>
+                    <Alert color={'info'}>No product</Alert>
                 </div>
             );
         } else {
