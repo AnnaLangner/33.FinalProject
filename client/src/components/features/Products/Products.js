@@ -42,19 +42,19 @@ class Products extends React.Component {
         } else if (request.pending === false && request.error != null) {
             return (
                 <div>
-                    <Alert color={'error'}>{request.error}</Alert>
+                    <Alert variant={'error'}>{request.error}</Alert>
                 </div>
             );
         } else if (request.pending === false && request.success === true && products.length === 0) {
             return (
                 <div>
-                    <Alert color={'info'}>No posts</Alert>
+                    <Alert variant={'info'}>No posts</Alert>
                 </div>
             );
         } else {
             return (
                 <div>
-                    <Alert color={'info'}>Something went wrong...</Alert>
+                    <Alert variant={'info'}>Something went wrong...</Alert>
                 </div>
             );
         }

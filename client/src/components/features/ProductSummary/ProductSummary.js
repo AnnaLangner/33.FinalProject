@@ -1,20 +1,18 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Card, CardImg, CardText, CardBody, CardTitle, CardLink } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import men1 from '../../../picture/men1.jpg'
-import ProductModal from '../ProductModal/ProductModal'
+import Button from '../../common/Button/Button';
+import HtmlBox from '../../common/HtmlBox/HtmlBox';
+import SmallTitle from "../../common/SmallTitle/SmallTitle";
 
-const ProductSummary = ({ name, price }) => (
+const ProductSummary = ({ id, name, price, content }) => (
     <div className={'product-summary'}>
-        <Card>
-            <CardImg src={men1}/>
-            <CardBody>
-                <CardTitle>{name}</CardTitle>
-                <CardText>{price}</CardText>
-                <CardLink href={'/product'}><ProductModal/></CardLink>
-            </CardBody>
-        </Card>
+        <img src={men1}/>
+        <SmallTitle>{name}</SmallTitle>
+        <p>{price}</p>
+        <HtmlBox>{content}</HtmlBox>
+        <Button variant={'secondary'}><Link to={`/products/${id}`}>More about</Link></Button>
     </div>
 );
 

@@ -1,11 +1,14 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { Alert, Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 import Spinner from '../../common/Spinner/Spinner';
 import men1 from "../../../picture/men1.jpg";
 
+import Button from '../../common/Button/Button';
+import HtmlBox from '../../common/HtmlBox/HtmlBox';
+import SmallTitle from "../../common/SmallTitle/SmallTitle";
+import Alert from '../../common/Alert/Alert';
 
 class SingleProduct extends React.Component {
     
@@ -21,14 +24,11 @@ class SingleProduct extends React.Component {
         if (request.pending === false && request.success === true && product) {
             return (
                 <div>
-                    <Card>
-                        <CardImg src={men1}/>
-                        <CardBody>
-                            <CardTitle>{product.name}</CardTitle>
-                            <CardText>{product.price}</CardText>
-                            <CardText>{product.content}</CardText>
-                        </CardBody>
-                    </Card>
+                    <img src={men1}/>
+                    <SmallTitle>{product.name}</SmallTitle>
+                    <p>{product.price}</p>
+                    <HtmlBox>{product.content}</HtmlBox>
+                    <Button variant={'secondary'}>Add to cart</Button>
                 </div>
             );
         } else if (request.pending === true || request.success === null) {
@@ -40,19 +40,19 @@ class SingleProduct extends React.Component {
         }else if (request.pending === false && request.error !== null) {
             return (
                 <div>
-                    <Alert color={'error'}>{request.error}</Alert>
+                    <Alert variant={'error'}>{request.error}</Alert>
                 </div>
             );
         } else if (request.pending === false && request.success === true) {
             return (
                 <div>
-                    <Alert color={'info'}>No product</Alert>
+                    <Alert variant={'info'}>No product</Alert>
                 </div>
             );
         } else {
             return (
                 <div>
-                    <Alert color={'info'}>Something went wrong...</Alert>
+                    <Alert variant={'info'}>Something went wrong...</Alert>
                 </div>
             );
         }
