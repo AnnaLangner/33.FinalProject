@@ -15,7 +15,7 @@ exports.getSingleProduct = async (req, res) => {
         if (err) {
             res.status(500).send(err);
         }
-        res.jason(product);
+        res.json(product);
     });
 };
 

@@ -20,7 +20,9 @@ class SingleProduct extends React.Component {
 
     render() {
         const { product, request } = this.props;
-
+        console.log(request.pending);
+        console.log(request.success );
+        console.log(product);
         if (request.pending === false && request.success === true && product) {
             return (
                 <div>
@@ -61,14 +63,14 @@ class SingleProduct extends React.Component {
 }
 
 SingleProduct.propTypes = {
-    products: PropTypes.arrayOf(
+    products:
         PropTypes.shape({
             id: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
             content: PropTypes.string.isRequired,
             price: PropTypes.string.isRequired,
-        })
-    ),
+        }),
+
     loadProducts: PropTypes.func.isRequired,
     resetRequest: PropTypes.func.isRequired,
 };
