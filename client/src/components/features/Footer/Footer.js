@@ -17,7 +17,7 @@ class Footer extends React.Component {
         const { links } = this.state;
         return (
             <nav className={'footer'}>
-                <p>{'All rights reserved'}</p>
+                <p>{'© 2019 All Rights Reserved'}</p>
                 <MainMenu links={links}/>
             </nav>
         );
