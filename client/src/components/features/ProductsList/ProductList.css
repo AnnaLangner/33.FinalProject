@@ -5,4 +5,5 @@
 .img-fashion {
     height: 500px;
     background-size: cover;
+    border-radius: 5px;
 }
