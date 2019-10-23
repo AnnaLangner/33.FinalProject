@@ -10,6 +10,7 @@ import Contact from './components/pages/Contact/ContactPage';
 import Statute from './components/pages/Statute/StatutePage';
 import NotFound from './components/pages/NotFound/NotFoundPage';
 import Product from './components/pages/Product/ProductPage';
+import Cart from './components/pages/Cart/CartPage'
 
 class App extends React.Component {
 
@@ -23,6 +24,7 @@ class App extends React.Component {
               <Route path={'/statute'} exact component={Statute}/>
               <Route path={'/contact'} exact component={Contact}/>
               <Route path={'/products/:id'} exact component={Product}/>
+              <Route path={'/cart'} exact component={Cart} />
               <Route component={NotFound}/>
           </Switch>
       </MainLayout>

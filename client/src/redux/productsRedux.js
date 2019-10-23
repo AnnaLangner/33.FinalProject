@@ -7,11 +7,7 @@ export const getProducts = ({ products }) => products.data;
 export const getRequest = ({ products }) => products.request;
 export const getPages = ({ products }) => Math.ceil(products.amount / products.productPerPage);
 export const getSingleProduct = ({ products }) => products.singleProduct;
-export const getCartProducts = ({ products }) => {
-    return products.cart.map(cartProduct => {
-        return { product: products.data.find(item => item.id === cartProduct.id), amount: cartProduct.amount }
-    })
-};
+
 /* ACTIONS */
 
 // action name creator
@@ -37,7 +33,6 @@ export const resetRequest = () => ({ type: RESET_REQUEST });
 /* INITIAL STATE */
 const initialState = {
     data: [],
-    cart: [{ product: 1, amount: 2 }],
     request: {
         pending: false,
         error: null,
@@ -81,6 +76,7 @@ export default function productsRedux(statePart = initialState, action = {}) {
 
 export const loadProductsRequest = () => {
     return async dispatch => {
+        console.log('Request started');
         dispatch(startRequest());
         try {
             let res = await axios.get(`${API_URL}/products`);
@@ -95,6 +91,7 @@ export const loadProductsRequest = () => {
 
 export const loadSingleProductRequest = (id) => {
     return async dispatch => {
+        console.log('Single Product Request started');
         dispatch(startRequest());
         try {
             let res = await axios.get(`${API_URL}/products/${id}`);

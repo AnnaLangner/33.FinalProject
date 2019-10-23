@@ -41,3 +41,13 @@ exports.getProductByRange = async function (req, res) {
     }
 
 };
+
+//get cart
+exports.getCartProducts = async (req, res) => {
+    Product.findOne({item: req.params.item.id}).exec((err, product) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+        res.json(product);
+    });
+};
