@@ -8,7 +8,7 @@ import SmallTitle from "../../common/SmallTitle/SmallTitle";
 
 const ProductSummary = ({ id, name, price, content }) => (
     <div className={'product-summary'}>
-        <img className={'img-fashion'} src={men1} alt={'clothe'}/>
+        <img className={'img-fashion'} src={men1} alt={'cloth'}/>
         <SmallTitle>{name}</SmallTitle>
         <p>{price}</p>
         <HtmlBox>{content}</HtmlBox>
