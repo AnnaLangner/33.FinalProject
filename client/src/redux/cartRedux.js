@@ -18,7 +18,6 @@ export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 export const SET_DISCOUNT = 'SET_DISCOUNT';
 export const UPDATE_CART = 'UPDATE_CART';
-export const UPDATE_SORT = 'UPDATE_SORT';
 
 export const loadCart = products => ({ type: LOAD_CART, payload: products});
 export const addProduct = product => ({ type: ADD_PRODUCT, payload: product});
@@ -53,7 +52,6 @@ export const updateCart = cartProducts => dispatch => {
         payload: cartTotal
     });
 };
-export const updateSort = sort => ({ type: UPDATE_SORT, payload: sort});
 
 /* INITIAL STATE */
 
@@ -98,11 +96,6 @@ export default function cartRedux(state = initialState, action) {
             return {
                 ...state,
                 data: action.payload
-            };
-        case UPDATE_SORT:
-            return {
-                ...state,
-                type: action.payload
             };
         default:
             return state;
