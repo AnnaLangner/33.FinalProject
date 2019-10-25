@@ -103,29 +103,29 @@ export default function cartRedux(state = initialState, action) {
 }
 
 /* THUNKS */
-// export const loadCartRequest = () => {
-//     return async dispatch => {
-//         dispatch(startRequest());
-//         try {
-//             dispatch(loadCart(res.products));
-//             dispatch(endRequest());
-//         } catch (e) {
-//             dispatch(errorRequest(e.message));
-//         }
-//     };
-// };
-//
-// export const addProductRequest = (product) => {
-//     return async dispatch => {
-//         dispatch(startRequest());
-//         try {
-//             //tu nie wiem co ma być ;/
-//             let res = await axios.product(product);
-//             dispatch(addProduct(res.products));
-//             dispatch(endRequest());
-//         } catch (e) {
-//             dispatch(errorRequest(e.message));
-//         }
-//     }
-// };
+export const loadCartRequest = () => {
+    return async dispatch => {
+        dispatch(startRequest());
+        try {
+            dispatch(loadCart(res.products));
+            dispatch(endRequest());
+        } catch (e) {
+            dispatch(errorRequest(e.message));
+        }
+    };
+};
+
+export const addProductRequest = (product) => {
+    return async dispatch => {
+        dispatch(startRequest());
+        try {
+            //tu nie wiem co ma być ;/
+            let res = await axios.product(product);
+            dispatch(addProduct(res.products));
+            dispatch(endRequest());
+        } catch (e) {
+            dispatch(errorRequest(e.message));
+        }
+    }
+};
 
