@@ -76,7 +76,6 @@ export default function productsRedux(statePart = initialState, action = {}) {
 
 export const loadProductsRequest = () => {
     return async dispatch => {
-        console.log('Request started');
         dispatch(startRequest());
         try {
             let res = await axios.get(`${API_URL}/products`);
@@ -91,7 +90,6 @@ export const loadProductsRequest = () => {
 
 export const loadSingleProductRequest = (id) => {
     return async dispatch => {
-        console.log('Single Product Request started');
         dispatch(startRequest());
         try {
             let res = await axios.get(`${API_URL}/products/${id}`);

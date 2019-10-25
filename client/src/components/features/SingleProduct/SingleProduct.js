@@ -19,17 +19,14 @@ class SingleProduct extends React.Component {
     }
 
     render() {
-        const { product, request } = this.props;
-        console.log(request.pending);
-        console.log(request.success );
-        console.log(product);
-        if (request.pending === false && request.success === true && product) {
+        const { products, request } = this.props;
+        if (request.pending === false && request.success === true && products) {
             return (
                 <div>
                     <img src={men1} alt={'cloth'}/>
-                    <SmallTitle>{product.name}</SmallTitle>
-                    <p>{product.price}</p>
-                    <HtmlBox>{product.content}</HtmlBox>
+                    <SmallTitle>{products.name}</SmallTitle>
+                    <p>{products.price}</p>
+                    <HtmlBox>{products.content}</HtmlBox>
                     <Button variant={'secondary'}>Add to cart</Button>
                 </div>
             );
