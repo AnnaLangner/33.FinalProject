@@ -1,6 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import Spinner from '../../common/Spinner/Spinner';
 import men1 from "../../../picture/men1.jpg";
@@ -27,7 +27,7 @@ class SingleProduct extends React.Component {
                     <SmallTitle>{products.name}</SmallTitle>
                     <p>{products.price}</p>
                     <HtmlBox>{products.content}</HtmlBox>
-                    <Button variant={'secondary'}>Add to cart</Button>
+                    <Button variant={'secondary'}><Link to={'/cart'}>Add to cart</Link></Button>
                 </div>
             );
         } else if (request.pending === true || request.success === null) {
