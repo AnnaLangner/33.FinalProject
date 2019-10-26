@@ -1,5 +1,6 @@
 import {endRequest, errorRequest, startRequest} from "./productsRedux";
 import axios from 'axios';
+import {API_URL} from "../config";
 
 /* SELECTORS */
 
@@ -107,6 +108,7 @@ export const loadCartRequest = () => {
     return async dispatch => {
         dispatch(startRequest());
         try {
+            let res = await axios.get(`${API_URL}/products`);
             dispatch(loadCart(res.products));
             dispatch(endRequest());
         } catch (e) {
