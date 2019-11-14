@@ -1,16 +1,14 @@
 import { connect } from 'react-redux';
-import { getCartProducts, loadCartRequest} from "../../../redux/cartRedux";
-import {getRequest, resetRequest} from "../../../redux/productsRedux";
+import { getCartProducts, increaseProductAmount, decreaseProductAmount } from "../../../redux/cartRedux";
 import Cart from './Cart';
 
 const mapStateToProps = state => ({
     products: getCartProducts(state),
-    request: getRequest(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-    loadProducts: (id) => dispatch(loadCartRequest(id)),
-    resetRequest: () => dispatch(resetRequest()),
-});
+    increaseProductAmount: id => dispatch(increaseProductAmount(id)),
+    decreaseProductAmount: id => dispatch(decreaseProductAmount(id)),
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

@@ -1,12 +1,11 @@
-import {endRequest, errorRequest, startRequest} from "./productsRedux";
 import axios from 'axios';
 import {API_URL} from "../config";
 
 /* SELECTORS */
 
-export const getCartProducts = ({ products }) => {
-    return products.cart.map(cartProduct => {
-        return { product: products.data.find(item => item.id === cartProduct.id), amount: cartProduct.amount }
+export const getCartProducts = ({ cart, products }) => {
+    return cart.data.map(cartProduct => {
+        return { product: products.data.find(product => product.id === cartProduct.product), amount: cartProduct.amount }
     })
 };
 
@@ -17,13 +16,17 @@ export const getCartProducts = ({ products }) => {
 export const LOAD_CART = 'LOAD_CART';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
-export const SET_DISCOUNT = 'SET_DISCOUNT';
-export const UPDATE_CART = 'UPDATE_CART';
+export const INCREASE_PRODUCT = 'INCREASE_PRODUCT';
+export const DECREASE_PRODUCT = 'DECREASE_PRODUCT';
+// export const SET_DISCOUNT = 'SET_DISCOUNT';
+// export const UPDATE_CART = 'UPDATE_CART';
 
 export const loadCart = products => ({ type: LOAD_CART, payload: products});
-export const addProduct = product => ({ type: ADD_PRODUCT, payload: product});
-export const removeProduct = product => ({ type: REMOVE_PRODUCT, payload: product});
-export const setDiscount = product => ({ type: SET_DISCOUNT, payload: product});
+export const addProductToCart = product => ({ type: ADD_PRODUCT, payload: product});
+export const removeCartProduct = product => ({ type: REMOVE_PRODUCT, payload: product});
+export const increaseProductAmount = id => ({ type: INCREASE_PRODUCT, payload: id });
+export const decreaseProductAmount = id => ({ type: DECREASE_PRODUCT, payload: id });
+/* export const setDiscount = product => ({ type: SET_DISCOUNT, payload: product});
 export const updateCart = cartProducts => dispatch => {
     let productQuantity = cartProducts.reduce((sum, p) => {
         sum += p.quantity;
@@ -52,22 +55,14 @@ export const updateCart = cartProducts => dispatch => {
         type: UPDATE_CART,
         payload: cartTotal
     });
-};
+}; */
 
 /* INITIAL STATE */
 
 const initialState = {
-    products: [],
-    cart: [{ product: 1, amount: 2 }],
-    data: {
-        productQuantity: 0,
-        installments: 0,
-        totalPrice: 0,
-        currencyId: 'USD',
-        currencyFormat: '$'
-    },
-    type: '',
-    value: 0,
+    data: [{ product: "5d9591f62abbb22bdc7f552e", amount: 1 }],
+    currencyId: 'USD',
+    currencyFormat: '$'
 };
 
 /* REDUCER */
@@ -76,19 +71,21 @@ export default function cartRedux(state = initialState, action) {
         case LOAD_CART:
             return {
                 ...state,
-                products: action.payload
+                data: action.payload
             };
         case ADD_PRODUCT:
             return {
                 ...state,
-                productToAdd: Object.assign({}, action.payload)
+                data: [...state.data, action.payload]
             };
         case REMOVE_PRODUCT:
-            return {
-                ...state,
-                productToRemove: Object.assign({}, action.payload)
-            };
-        case SET_DISCOUNT:
+            let newData = state.data.filter(product => product.id !== action.payload)
+            return { ...state, data: newData };
+        case INCREASE_PRODUCT:
+            return {...state, data: state.data.map(item => (item.product !== action.payload) ? item : { ...item, amount: item.amount+1 }) }
+        case DECREASE_PRODUCT:
+            return {...state, data: state.data.map(item => (item.product !== action.payload) ? item : { ...item, amount: item.amount-1 }) }
+        /*case SET_DISCOUNT:
             return {
                 ...state,
                 value: action.payload
@@ -97,37 +94,9 @@ export default function cartRedux(state = initialState, action) {
             return {
                 ...state,
                 data: action.payload
-            };
+            }; */
         default:
             return state;
     }
 }
-
-/* THUNKS */
-export const loadCartRequest = () => {
-    return async dispatch => {
-        dispatch(startRequest());
-        try {
-            let res = await axios.get(`${API_URL}/products`);
-            dispatch(loadCart(res.products));
-            dispatch(endRequest());
-        } catch (e) {
-            dispatch(errorRequest(e.message));
-        }
-    };
-};
-
-export const addProductRequest = (product) => {
-    return async dispatch => {
-        dispatch(startRequest());
-        try {
-            //tu nie wiem co ma być ;/
-            let res = await axios.product(product);
-            dispatch(addProduct(res.products));
-            dispatch(endRequest());
-        } catch (e) {
-            dispatch(errorRequest(e.message));
-        }
-    }
-};
 

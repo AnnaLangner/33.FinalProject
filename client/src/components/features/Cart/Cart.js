@@ -2,25 +2,27 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import men1 from "../../../picture/men1.jpg";
+import Button from '../../common/Button/Button';
 import HtmlBox from '../../common/HtmlBox/HtmlBox';
 import SmallTitle from "../../common/SmallTitle/SmallTitle";
 
 class Cart extends React.Component {
 
-    componentDidMount() {
-        const {loadProducts, resetRequest, match} =this.props;
-        loadProducts(match.params.id);
-        resetRequest();
-    }
-
     render() {
-        const {products} = this.props;
+        const {products, increaseProductAmount, decreaseProductAmount} = this.props;
         return (
             <div>
-                <img src={men1} alt={'cloth'}/>
-                <SmallTitle>{products.name}</SmallTitle>
-                <p>{products.price}</p>
-                <HtmlBox>{products.content}</HtmlBox>
+                <ul>
+                    {products.length}
+                    {products.map(item =>
+                        <li>
+                            {item.product.name}
+                            <Button onClick={ () => {decreaseProductAmount(item.product._id)}} variant={'danger'}>-</Button>
+                            <span>{item.amount}</span>
+                            <Button onClick={ () => {increaseProductAmount(item.product._id)}} variant={'success'}>+</Button>
+                        </li>
+                    )}
+                </ul>
             </div>
         );
     }
@@ -33,10 +35,8 @@ Cart.propTypes = {
             name: PropTypes.string.isRequired,
             content: PropTypes.string.isRequired,
             price: PropTypes.string.isRequired,
+            amount: PropTypes.number.isRequired
         }),
-
-    loadProducts: PropTypes.func.isRequired,
-    resetRequest: PropTypes.func.isRequired,
 };
 
 export default withRouter(props => <Cart {...props}/>);

@@ -1,10 +1,9 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter} from 'react-router-dom';
 
 import Spinner from '../../common/Spinner/Spinner';
 import men1 from "../../../picture/men1.jpg";
-
 import Button from '../../common/Button/Button';
 import HtmlBox from '../../common/HtmlBox/HtmlBox';
 import SmallTitle from "../../common/SmallTitle/SmallTitle";
@@ -18,16 +17,22 @@ class SingleProduct extends React.Component {
         resetRequest();
     }
 
+    handleClick = () => {
+        const { addCartProduct, product } = this.props
+        addCartProduct({ product: product._id , amount: 1})
+        this.props.history.push('/cart');
+    }
+
     render() {
-        const { products, request } = this.props;
-        if (request.pending === false && request.success === true && products) {
+        const { product, request } = this.props;
+        if (request.pending === false && request.success === true && product) {
             return (
                 <div>
                     <img src={men1} alt={'cloth'}/>
-                    <SmallTitle>{products.name}</SmallTitle>
-                    <p>{products.price}</p>
-                    <HtmlBox>{products.content}</HtmlBox>
-                    <Button variant={'secondary'}><Link to={'/cart'}>Add to cart</Link></Button>
+                    <SmallTitle>{product.name}</SmallTitle>
+                    <p>{product.price}</p>
+                    <HtmlBox>{product.content}</HtmlBox>
+                    <Button onClick={this.handleClick} variant={'secondary'}>Add to cart</Button>
                 </div>
             );
         } else if (request.pending === true || request.success === null) {
