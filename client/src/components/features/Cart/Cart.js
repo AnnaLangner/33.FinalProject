@@ -1,10 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import men1 from "../../../picture/men1.jpg";
 import Button from '../../common/Button/Button';
-import HtmlBox from '../../common/HtmlBox/HtmlBox';
-import SmallTitle from "../../common/SmallTitle/SmallTitle";
 
 class Cart extends React.Component {
 
