@@ -26,14 +26,15 @@ class Cart extends React.Component {
 }
 
 Cart.propTypes = {
-    products:
+    products: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,
             name: PropTypes.string.isRequired,
             content: PropTypes.string.isRequired,
             price: PropTypes.string.isRequired,
             amount: PropTypes.number.isRequired
-        }),
+        }).isRequired
+    ).isRequired
 };
 
 export default withRouter(props => <Cart {...props}/>);
