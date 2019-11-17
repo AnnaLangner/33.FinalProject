@@ -57,7 +57,7 @@ export const updateCart = cartProducts => dispatch => {
 /* INITIAL STATE */
 
 const initialState = {
-    data: [{ product: "5d9591f62abbb22bdc7f552e", amount: 1 }],
+    data: [],
     currencyId: 'USD',
     currencyFormat: '$'
 };
@@ -79,9 +79,9 @@ export default function cartRedux(state = initialState, action) {
             let newData = state.data.filter(product => product.id !== action.payload)
             return { ...state, data: newData };
         case INCREASE_PRODUCT:
-            return {...state, data: state.data.map(item => (item.product !== action.payload) ? item : { ...item, amount: item.amount+1 }) }
+            return {...state, data: state.data.map(item => (item.product !== action.payload) ? item : { ...item, amount: item.amount+1 }) };
         case DECREASE_PRODUCT:
-            return {...state, data: state.data.map(item => (item.product !== action.payload) ? item : { ...item, amount: item.amount-1 }) }
+            return {...state, data: state.data.map(item => (item.product !== action.payload) ? item : { ...item, amount: item.amount-1 }) };
         /*case SET_DISCOUNT:
             return {
                 ...state,
