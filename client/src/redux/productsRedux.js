@@ -28,7 +28,7 @@ export const START_REQUEST = createActionName('START_REQUEST');
 export const END_REQUEST = createActionName('END_REQUEST');
 export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 export const RESET_REQUEST = createActionName('RESET_REQUEST');
-export const SET_SOTR_OPTIONS = createActionName('SET_SORT_OPTIONS');
+export const SET_SORT_OPTIONS = createActionName('SET_SORT_OPTIONS');
 
 export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS});
 export const loadProductByPage = payload => ({ payload, type: LOAD_PRODUCT_PAGE });
@@ -37,7 +37,7 @@ export const startRequest = () => ({ type: START_REQUEST });
 export const endRequest = () => ({ type: END_REQUEST });
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 export const resetRequest = () => ({ type: RESET_REQUEST });
-export const setSortOptions = payload => ({ payload, type: SET_SOTR_OPTIONS });
+export const setSortOptions = payload => ({ payload, type: SET_SORT_OPTIONS });
 
 /* INITIAL STATE */
 const initialState = {
@@ -78,7 +78,7 @@ export default function productsRedux(statePart = initialState, action = {}) {
             return { ...statePart, request: { pending: false, error: action.error, success: false } };
         case RESET_REQUEST:
             return { ...statePart, request: { pending: false, error: null, success: null } };
-        case SET_SOTR_OPTIONS:
+        case SET_SORT_OPTIONS:
             return { ...statePart, key: action.payload.key, direction: action.payload.direction };
         default:
             return statePart;
