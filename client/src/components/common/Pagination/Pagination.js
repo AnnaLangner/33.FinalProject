@@ -38,7 +38,7 @@ class Pagination extends React.Component {
         return <div className='pagination'>
             <ul className='pagination__list'>
                 {presentPage > 1 ? (
-                    <li className={`pagination__list__item${(true) ? ' pagination__list__item--active' : ''}`}
+                    <li className={`pagination__list__item${(true) ? ' pagination__list__item' : ''}`}
                         onClick={this.previousStep}>
                         &lt;
                     </li>
@@ -54,13 +54,13 @@ class Pagination extends React.Component {
                 ))}
 
                 {presentPage === pages ? '' : (
-                    <li className={`pagination__list__item${(true) ? ' pagination__list__item--active' : ''}`}
+                    <li className={`pagination__list__item${(true) ? ' pagination__list__item' : ''}`}
                         onClick={this.nextStep}>
                         &gt;
                     </li>
                 )}
             </ul>
-        </div>;
+        </div>
     }
 }
 
