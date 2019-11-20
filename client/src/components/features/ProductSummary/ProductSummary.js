@@ -1,25 +1,37 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
-import Button from '../../common/Button/Button';
-import HtmlBox from '../../common/HtmlBox/HtmlBox';
-import SmallTitle from "../../common/SmallTitle/SmallTitle";
 
-const ProductSummary = ({ id, name, price, content, products, image }) => (
-    <div className={'product-summary'}>
-        <img className={'img-fashion'} src={products} alt={'cloth'}>{image}</img>
-        <SmallTitle>{name}</SmallTitle>
-        <p>{price}</p>
-        <HtmlBox>{content}</HtmlBox>
-        <Button variant={'secondary'}><Link to={`/products/${id}`}>More about</Link></Button>
-    </div>
-);
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Col, Card, Badge, CardImg, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+
+export class ProductSummary extends React.Component {
+    render() {
+        const { id, tag, image, name, price } = this.props;
+
+        return (
+            <Col className="product-summary" md={5}>
+                <Link to={`/products/${id}`}>
+                    <Card>
+                        { tag ? <Badge color="info">{tag}</Badge> : <span className="non-badge"></span> }
+                        <CardImg src={image} alt='clothes'/>
+                        <CardBody>
+                            <CardTitle>{name}</CardTitle>
+                            <CardSubtitle>{price}</CardSubtitle>
+                        </CardBody>
+                    </Card>
+                </Link>
+            </Col>
+        )
+    }
+}
 
 ProductSummary.propTypes = {
     id: PropTypes.string,
     image: PropTypes.object,
     name: PropTypes.string,
     price: PropTypes.string,
+    tag: PropTypes.string,
 };
 
 export default ProductSummary;
