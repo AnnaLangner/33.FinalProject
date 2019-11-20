@@ -2,7 +2,7 @@
 
 export const getCartProducts = ({ cart, products }) => {
     return cart.data.map(cartProduct => {
-        return { product: products.data.find(product => product.id === cartProduct.product), amount: cartProduct.amount }
+        return { amount: cartProduct.amount, product: products.data.find(product => product._id === cartProduct.product) }
     })
 };
 

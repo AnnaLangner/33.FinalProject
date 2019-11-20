@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import Button from '../../common/Button/Button';
+import './Cart.css';
 
 class Cart extends React.Component {
 
@@ -14,9 +15,9 @@ class Cart extends React.Component {
                     {products.map(item =>
                         <li>
                             {item.product.name}
-                            <Button onClick={ () => {decreaseProductAmount(item.product._id)}} variant={'danger'}>-</Button>
+                            <Button onClick={ () => {decreaseProductAmount(item.product._id)}} variant={'danger'} className={'buttonClick'}>-</Button>
                             <span>{item.amount}</span>
-                            <Button onClick={ () => {increaseProductAmount(item.product._id)}} variant={'success'}>+</Button>
+                            <Button onClick={ () => {increaseProductAmount(item.product._id)}} variant={'success'} className={'buttonClick'}>+</Button>
                         </li>
                     )}
                 </ul>
