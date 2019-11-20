@@ -3,7 +3,6 @@ import { PropTypes } from 'prop-types';
 import { withRouter} from 'react-router-dom';
 
 import Spinner from '../../common/Spinner/Spinner';
-import men1 from "../../../picture/men1.jpg";
 import Button from '../../common/Button/Button';
 import HtmlBox from '../../common/HtmlBox/HtmlBox';
 import SmallTitle from "../../common/SmallTitle/SmallTitle";
@@ -18,17 +17,17 @@ class SingleProduct extends React.Component {
     }
 
     handleClick = () => {
-        const { addCartProduct, product } = this.props
-        addCartProduct({ product: product._id , amount: 1})
+        const { addCartProduct, product } = this.props;
+        addCartProduct({ product: product._id , amount: 1});
         this.props.history.push('/cart');
-    }
+    };
 
     render() {
         const { product, request } = this.props;
         if (request.pending === false && request.success === true && product) {
             return (
                 <div>
-                    <img src={men1} alt={'cloth'}/>
+                    <img src={product.image} alt={'cloth'}/>
                     <SmallTitle>{product.name}</SmallTitle>
                     <p>{product.price}</p>
                     <HtmlBox>{product.content}</HtmlBox>

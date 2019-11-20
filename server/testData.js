@@ -8,7 +8,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 5',
-            picture: { src: '/picture/men1.jpg'},
+            image: { src: '/picture/men1.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -17,7 +17,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 7',
-            picture: { src: '/picture/men2.jpg'},
+            image: { src: '/picture/men2.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -26,7 +26,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 8',
-            picture: { src: '/picture/men3.jpg'},
+            image: { src: '/picture/men3.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -35,7 +35,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 5',
-            picture: { src: '/picture/men4.jpg'},
+            image: { src: '/picture/men4.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -44,7 +44,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 6',
-            picture: { src: '/picture/men5.jpg'},
+            image: { src: '/picture/men5.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -53,7 +53,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 9',
-            picture: { src: '/picture/men6.jpg'},
+            image: { src: '/picture/men6.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -62,7 +62,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 7',
-            picture: { src: '/picture/men7.jpg'},
+            image: { src: '/picture/men7.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -71,7 +71,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'male',
             price: '$ 4',
-            picture: { src: '/picture/men8.jpg'},
+            image: { src: '/picture/men8.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -80,7 +80,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 4',
-            picture: { src: '/picture/women1.jpg'},
+            image: { src: '/picture/women1.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -89,7 +89,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 3',
-            picture: { src: '/picture/women2.jpg'},
+            image: { src: '/picture/women2.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -98,7 +98,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 11',
-            picture: { src: '/picture/women3.jpg'},
+            image: { src: '/picture/women3.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -107,7 +107,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 16',
-            picture: { src: '/picture/women4.jpg'},
+            image: { src: '/picture/women4.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -116,7 +116,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 10',
-            picture: { src: '/picture/women5.jpg'},
+            image: { src: '/picture/women5.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -125,7 +125,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 12',
-            picture: { src: '/picture/women6.jpg'},
+            image: { src: '/picture/women6.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -134,7 +134,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 13',
-            picture: { src: '/picture/women7.jpg'},
+            image: { src: '/picture/women7.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
         {
@@ -143,7 +143,7 @@ const loadTestData = async () => {
             brand: 'A&L',
             model: 'female',
             price: '$ 14',
-            picture: { src: '/picture/women8.jpg'},
+            image: { src: '/picture/women8.jpg'},
             content: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         },
     ];

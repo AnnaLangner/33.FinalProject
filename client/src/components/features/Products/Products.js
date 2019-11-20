@@ -69,7 +69,7 @@ Products.propTypes = {
             brand:PropTypes.string.isRequired,
             model:PropTypes.string.isRequired,
             price: PropTypes.string.isRequired,
-            picture: PropTypes.object.isRequired,
+            image: PropTypes.object.isRequired,
             content: PropTypes.string.isRequired,
         })
     ),

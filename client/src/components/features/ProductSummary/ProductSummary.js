@@ -1,14 +1,13 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
-import men1 from '../../../picture/men1.jpg'
 import Button from '../../common/Button/Button';
 import HtmlBox from '../../common/HtmlBox/HtmlBox';
 import SmallTitle from "../../common/SmallTitle/SmallTitle";
 
-const ProductSummary = ({ id, name, price, content }) => (
+const ProductSummary = ({ id, name, price, content, products, image }) => (
     <div className={'product-summary'}>
-        <img className={'img-fashion'} src={men1} alt={'cloth'}/>
+        <img className={'img-fashion'} src={products} alt={'cloth'}>{image}</img>
         <SmallTitle>{name}</SmallTitle>
         <p>{price}</p>
         <HtmlBox>{content}</HtmlBox>
@@ -18,7 +17,7 @@ const ProductSummary = ({ id, name, price, content }) => (
 
 ProductSummary.propTypes = {
     id: PropTypes.string,
-    picture: PropTypes.object,
+    image: PropTypes.object,
     name: PropTypes.string,
     price: PropTypes.string,
 };
