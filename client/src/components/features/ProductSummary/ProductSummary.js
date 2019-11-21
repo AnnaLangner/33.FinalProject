@@ -14,7 +14,7 @@ export class ProductSummary extends React.Component {
                 <Link to={`/products/${id}`}>
                     <Card>
                         { tag ? <Badge color="info">{tag}</Badge> : <span className="non-badge"></span> }
-                        <CardImg src={image} alt='clothes'/>
+                        <CardImg src={image.src} alt='clothes'/>
                         <CardBody>
                             <CardTitle>{name}</CardTitle>
                             <CardSubtitle>{price}</CardSubtitle>
