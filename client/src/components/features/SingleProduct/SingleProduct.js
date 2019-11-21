@@ -70,6 +70,7 @@ SingleProduct.propTypes = {
             name: PropTypes.string.isRequired,
             content: PropTypes.string.isRequired,
             price: PropTypes.string.isRequired,
+            image: PropTypes.object.isRequired
         }),
 
     loadProducts: PropTypes.func.isRequired,
