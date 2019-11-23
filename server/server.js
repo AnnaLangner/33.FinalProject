@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const loadTestData = require('./testData');
 const helmet = require('helmet');
 const sanitize = require('mongo-sanitize');
+const path = require('path');
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.use((req, res, next) => {
     sanitize(req.body);
     next();
 });
+
+app.use(express.static(path.join(__dirname, 'picture')));
 
 // connects our back end code with the database
 mongoose.connect(config.DB, { useNewUrlParser: true });
