@@ -24,6 +24,13 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, 'picture')));
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '/../client/build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/../client/build/index.html'));
+});
+
 // connects our back end code with the database
 mongoose.connect(config.DB, { useNewUrlParser: true });
 let db = mongoose.connection;
