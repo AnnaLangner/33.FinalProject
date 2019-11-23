@@ -27,7 +27,7 @@ class SingleProduct extends React.Component {
         if (request.pending === false && request.success === true && product) {
             return (
                 <div>
-                    <img src={product.image} alt={'cloth'}/>
+                    <img src={product.image.src} alt={'clothes'}/>
                     <SmallTitle>{product.name}</SmallTitle>
                     <p>{product.price}</p>
                     <HtmlBox>{product.content}</HtmlBox>
