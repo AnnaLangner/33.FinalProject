@@ -6,8 +6,14 @@ import './Cart.css';
 
 class Cart extends React.Component {
 
+    handleRemoveProduct = (id) => {
+        const { removeCartProduct, updateCart } = this.props;
+        removeCartProduct(id);
+        updateCart();
+    };
+
     render() {
-        const {products, increaseProductAmount, decreaseProductAmount} = this.props;
+        const {products, increaseProductAmount, decreaseProductAmount } = this.props;
         return (
             <div>
                 <ul>
@@ -18,6 +24,7 @@ class Cart extends React.Component {
                             <Button onClick={ () => {decreaseProductAmount(item.product._id)}} variant={'danger'} className={'buttonClick'}>-</Button>
                             <span>{item.amount}</span>
                             <Button onClick={ () => {increaseProductAmount(item.product._id)}} variant={'success'} className={'buttonClick'}>+</Button>
+                            <Button onClick={ () => {this.handleRemoveProduct(item.product._id)} } variant={'danger'}>Delete</Button>
                         </li>
                     )}
                 </ul>
