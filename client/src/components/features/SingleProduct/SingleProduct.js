@@ -1,6 +1,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter} from 'react-router-dom';
+import './SingleProduct.scss'
 
 import Spinner from '../../common/Spinner/Spinner';
 import Button from '../../common/Button/Button';
