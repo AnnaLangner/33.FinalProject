@@ -4,12 +4,13 @@ import {
     increaseProductAmount,
     decreaseProductAmount,
     updateCart,
-    removeCartProduct
+    removeCartProduct, getUpdateCart
 } from "../../../redux/cartRedux";
 import Cart from './Cart';
 
 const mapStateToProps = state => ({
     products: getCartProducts(state),
+    updateCart: getUpdateCart(state)
 });
 
 const mapDispatchToProps = dispatch => ({

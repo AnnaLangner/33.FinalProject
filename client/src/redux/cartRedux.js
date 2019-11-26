@@ -5,16 +5,14 @@ export const getCartProducts = ({ cart, products }) => {
         return { amount: cartProduct.amount, product: products.data.find(product => product._id === cartProduct.product) }
     })
 };
-/*export const getUpdateCart = ({ cart }) => {
+export const getUpdateCart = ({ cart }) => {
     return cart.data.map( cartProduct => {dispatch => {
         let amount = cartProduct.reduce((sum, product) => {
-            sum += product.amount;
-            return sum;
+            return sum + product.amount;
         }, 0);
 
         let totalPrice = cartProduct.reduce((sum, product) => {
-            sum += product.price * product.amount;
-            return sum;
+            return sum + product.price * product.amount;
         }, 0);
 
         let cartTotal = {
@@ -30,7 +28,7 @@ export const getCartProducts = ({ cart, products }) => {
         });
     };
     })
-}; */
+};
 
 /* ACTIONS */
 
