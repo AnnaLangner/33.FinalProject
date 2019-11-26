@@ -165,8 +165,12 @@ const loadTestData = async () => {
     ];
 
     try {
-        await Product.create(data);
-        console.log('Test data has been successfully loaded');
+        let counter = await Product.countDocuments();
+        if(counter === 0) {
+            console.log('No products. Loading data...');
+            await Product.create(data);
+            console.log('Test data has been successfully loaded');
+        }
     }  catch (err) {
         console.log('Couldn\'t load test data', err);
     }
