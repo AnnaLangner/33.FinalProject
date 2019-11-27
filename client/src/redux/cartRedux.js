@@ -1,3 +1,4 @@
+/* eslint-disable */
 /* SELECTORS */
 
 export const getCartProducts = ({ cart, products }) => {
@@ -5,6 +6,7 @@ export const getCartProducts = ({ cart, products }) => {
         return { amount: cartProduct.amount, product: products.data.find(product => product._id === cartProduct.product) }
     })
 };
+
 export const getUpdateCart = ({ cart }) => {
     return cart.data.map( cartProduct => {dispatch => {
         let amount = cartProduct.reduce((sum, product) => {
