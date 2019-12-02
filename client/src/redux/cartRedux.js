@@ -76,8 +76,7 @@ export default function cartRedux(state = initialState, action) {
                 data: [...state.data, action.payload]
             };
         case REMOVE_PRODUCT:
-            let newData = state.data.filter(product => product.id !== action.payload);
-            return { ...state, data: newData };
+            return { ...state, data: state.data.filter(item => (item.product !== action.payload) ? item: { ...item, amount: item.amount}) };
         case INCREASE_PRODUCT:
             return {...state, data: state.data.map(item => (item.product !== action.payload) ? item : { ...item, amount: item.amount+1 }) };
         case DECREASE_PRODUCT:
