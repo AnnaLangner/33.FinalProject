@@ -23,6 +23,7 @@ class Cart extends React.Component {
                     {products.length !== 0 ? products.map(item =>
                         <li>
                             {item.product.name}
+                            {item.product.price}
                             <Button onClick={ () => {decreaseProductAmount(item.product._id)}} variant={'danger'} className={'buttonClick'}>-</Button>
                             <span>{item.amount}</span>
                             <Button onClick={ () => {increaseProductAmount(item.product._id)}} variant={'success'} className={'buttonClick'}>+</Button>
