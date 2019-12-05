@@ -46,7 +46,7 @@ export const DECREASE_PRODUCT = 'DECREASE_PRODUCT';
 
 export const loadCart = products => ({ type: LOAD_CART, payload: products});
 export const addProductToCart = product => ({ type: ADD_PRODUCT, payload: product});
-export const removeCartProduct = id => ({ type: REMOVE_PRODUCT, payload: id});
+export const removeCartProduct = product => ({ type: REMOVE_PRODUCT, payload: product});
 export const increaseProductAmount = id => ({ type: INCREASE_PRODUCT, payload: id });
 export const decreaseProductAmount = id => ({ type: DECREASE_PRODUCT, payload: id });
 // export const setDiscount = product => ({ type: SET_DISCOUNT, payload: product});
