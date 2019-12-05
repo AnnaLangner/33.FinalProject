@@ -21,7 +21,7 @@ class Cart extends React.Component {
                 <PageTitle>Shopping Cart</PageTitle>
                 <ul>
                     {products.length !== 0 ? products.map(item =>
-                        <li>
+                        <li key={item}>
                             {item.product.name}
                             {item.product.price}
                             <Button onClick={ () => {decreaseProductAmount(item.product._id)}} variant={'danger'} className={'buttonClick'}>-</Button>
@@ -39,11 +39,10 @@ class Cart extends React.Component {
 Cart.propTypes = {
     products: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            content: PropTypes.string.isRequired,
-            price: PropTypes.string.isRequired,
-            amount: PropTypes.number.isRequired
+            name: PropTypes.string,
+            content: PropTypes.string,
+            price: PropTypes.string,
+            amount: PropTypes.number,
         }).isRequired
     ).isRequired,
     removeCartProduct: PropTypes.func.isRequired,
