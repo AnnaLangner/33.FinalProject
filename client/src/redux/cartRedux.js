@@ -46,7 +46,7 @@ export const DECREASE_PRODUCT = 'DECREASE_PRODUCT';
 
 export const loadCart = products => ({ type: LOAD_CART, payload: products});
 export const addProductToCart = product => ({ type: ADD_PRODUCT, payload: product});
-export const removeCartProduct = product => ({ type: REMOVE_PRODUCT, payload: product});
+export const removeCartProduct = _id => ({ type: REMOVE_PRODUCT, payload: _id});
 export const increaseProductAmount = id => ({ type: INCREASE_PRODUCT, payload: id });
 export const decreaseProductAmount = id => ({ type: DECREASE_PRODUCT, payload: id });
 // export const setDiscount = product => ({ type: SET_DISCOUNT, payload: product});
@@ -77,7 +77,7 @@ export default function cartRedux(state = initialState, action) {
             };
         case REMOVE_PRODUCT:
             return { ...state, data: state.data.filter(item => {
-                    console.log(item.product, action.payload, item);
+                    console.log("PAYLOAD", action.payload);
                     return (item.product !== action.payload) ? item: { ...item, amount: item.amount}
                 }) };
         case INCREASE_PRODUCT:
