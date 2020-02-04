@@ -9,9 +9,8 @@ import './Cart.css';
 class Cart extends React.Component {
 
     handleRemoveProduct = (_id) => {
-        const { removeCartProduct, updateCart } = this.props;
+        const { removeCartProduct } = this.props;
         removeCartProduct(_id);
-        updateCart();
     };
 
     render() {
